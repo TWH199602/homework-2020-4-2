@@ -1,0 +1,73 @@
+# hanoi
+#include <stdio.h>
+void hanoi(int n, char A, char B, char C) {
+if(n == 1) {
+printf("Move sheet %d from %c to %c\n", n, A, C);
+}
+else {
+hanoi(n-1, A, C, B);
+printf("Move sheet %d from %c to %c\n", n, A, C);
+hanoi(n-1, B, A, C);
+}
+}
+int main() {
+int n;
+printf("请输入汉诺塔层数：");
+scanf("%d", &n);
+hanoi(n, 'A', 'B', 'C');
+return 0;
+}
+
+
+
+
+
+# hanoi2
+
+#include <stdio.h>
+
+long count = 0;
+
+void hanoi(int n,char a,char b,char c)
+
+{
+
+    if (1 == n)
+
+{
+
+    printf("第%d次，%c塔--->%c塔 ",++count,a,c);
+
+}
+
+else
+
+{
+
+    hanoi(n-1,a,c,b);
+
+    printf("第%d次，%c塔--->%c塔 ",++count,a,c);
+
+    hanoi(n-1,b,a,c);
+
+}
+
+}
+
+int main(void)
+
+{
+
+    int h;
+
+    printf("输入汉诺塔圆盘的数量： ");
+
+    scanf("%d",&h);
+
+    hanoi(h,'A','B','C');
+
+    return 0;
+
+}
+
+/* 在输入7时，一共执行127次 */# hanoi
